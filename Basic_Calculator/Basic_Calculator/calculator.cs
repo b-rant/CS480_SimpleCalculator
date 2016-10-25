@@ -23,13 +23,16 @@ namespace Basic_Calculator
         private string currentDisplayedInput = "";
 
         // Enumeration type for preventing user error
-        enum inputTypes { operand, number, leftParen, rightParen};
-
-        // The following values are checked to prevent user error
-        // Prevents consecutive operands and decimals
-        private inputTypes lastInput;
+        enum inputTypes { operand, number, leftParen, rightParen, empty };
+        // Error Rules followed //
+        // If last input = number then next input can be anything, if it is a leftParen then multiplication will be assumed
+        // If last input = operand then next input != operand
+        // If last input = leftParen then next input != operand or rightParen
+        // If last input = rightParen then next input can be anything, if it is a number then multiplication will be assumed
+        // Prevents consecutive operands and decimals 
+        private inputTypes lastInput = inputTypes.empty;
         // Used to prevent error with parenthesis
-        private int rightParenCount = 0;
+        private int leftParenCount = 0;
 
 
 
@@ -45,7 +48,6 @@ namespace Basic_Calculator
 
         // Click event handler for the 0 button
         private void num0_btn_Click(object sender, EventArgs e) {
-
             currentDisplayedInput = currentDisplayedInput + "0";
             update_calc_output_label();
         }
@@ -106,6 +108,8 @@ namespace Basic_Calculator
 
         // Click event handler for the decimal button
         private void decimal_btn_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand) { return; }
             currentDisplayedInput = currentDisplayedInput + ".";
             update_calc_output_label();
         }
@@ -117,30 +121,40 @@ namespace Basic_Calculator
 
         // Click event handler for the additon button
         private void add_btn_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand) { return; }
             currentDisplayedInput = currentDisplayedInput + "+";
             update_calc_output_label();
         }
 
         // Click event handler for the subtract button
         private void subtract_btn_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand) { return; }
             currentDisplayedInput = currentDisplayedInput + "-";
             update_calc_output_label();
         }
 
         // Click event handler for the multiplication button
         private void times_btn_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand) { return; }
             currentDisplayedInput = currentDisplayedInput + "*";
             update_calc_output_label();
         }
 
         // Click event handler for the division button
         private void division_btn_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand) { return; }
             currentDisplayedInput = currentDisplayedInput + "/";
             update_calc_output_label();
         }
 
         // Click event handler for the modulo button
         private void modulo_btn_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand) { return; }
             currentDisplayedInput = currentDisplayedInput + "%";
             update_calc_output_label();
         }
@@ -162,12 +176,16 @@ namespace Basic_Calculator
 
         // Click event handler for the power button
         private void power_bt_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand) { return; }
             currentDisplayedInput = currentDisplayedInput + "^";
             update_calc_output_label();
         }
 
         // Click event handler for the left parenthesis button
         private void left_paren_Click(object sender, EventArgs e) {
+            // Checks to prevent user error
+            if (lastInput == inputTypes.operand || lastInput == inputTypes.rightParen) { return; }
             currentDisplayedInput = currentDisplayedInput + "(";
             update_calc_output_label();
         }

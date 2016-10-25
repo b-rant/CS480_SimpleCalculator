@@ -7,3 +7,12 @@ c:\users\brant denherder\documents\visual studio 2015\Projects\Basic_Calculator\
 c:\users\brant denherder\documents\visual studio 2015\Projects\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.csproj.GenerateResource.Cache
 c:\users\brant denherder\documents\visual studio 2015\Projects\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.exe
 c:\users\brant denherder\documents\visual studio 2015\Projects\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.pdb
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\bin\Debug\Basic_Calculator.exe.config
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.exe
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.pdb
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\bin\Debug\Basic_Calculator.exe
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\bin\Debug\Basic_Calculator.pdb
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.csprojResolveAssemblyReference.cache
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.calculator.resources
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.Properties.Resources.resources
+C:\Users\Brant DenHerder\Dropbox\Brant Projects\CS480\CS480_SimpleCalculator\Basic_Calculator\Basic_Calculator\obj\Debug\Basic_Calculator.csproj.GenerateResource.Cache

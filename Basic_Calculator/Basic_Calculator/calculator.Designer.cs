@@ -51,12 +51,11 @@
             this.left_paren_btn = new System.Windows.Forms.Button();
             this.power_btn = new System.Windows.Forms.Button();
             this.right_paren_btn = new System.Windows.Forms.Button();
-            this.delete_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // num0_btn
             // 
-            this.num0_btn.Location = new System.Drawing.Point(12, 342);
+            this.num0_btn.Location = new System.Drawing.Point(12, 360);
             this.num0_btn.Name = "num0_btn";
             this.num0_btn.Size = new System.Drawing.Size(106, 50);
             this.num0_btn.TabIndex = 0;
@@ -66,7 +65,7 @@
             // 
             // num9_btn
             // 
-            this.num9_btn.Location = new System.Drawing.Point(124, 174);
+            this.num9_btn.Location = new System.Drawing.Point(124, 192);
             this.num9_btn.Name = "num9_btn";
             this.num9_btn.Size = new System.Drawing.Size(50, 50);
             this.num9_btn.TabIndex = 1;
@@ -76,7 +75,7 @@
             // 
             // times_btn
             // 
-            this.times_btn.Location = new System.Drawing.Point(180, 174);
+            this.times_btn.Location = new System.Drawing.Point(180, 192);
             this.times_btn.Name = "times_btn";
             this.times_btn.Size = new System.Drawing.Size(50, 50);
             this.times_btn.TabIndex = 2;
@@ -86,7 +85,7 @@
             // 
             // num8_btn
             // 
-            this.num8_btn.Location = new System.Drawing.Point(68, 174);
+            this.num8_btn.Location = new System.Drawing.Point(68, 192);
             this.num8_btn.Name = "num8_btn";
             this.num8_btn.Size = new System.Drawing.Size(50, 50);
             this.num8_btn.TabIndex = 3;
@@ -96,7 +95,7 @@
             // 
             // num7_btn
             // 
-            this.num7_btn.Location = new System.Drawing.Point(12, 174);
+            this.num7_btn.Location = new System.Drawing.Point(12, 192);
             this.num7_btn.Name = "num7_btn";
             this.num7_btn.Size = new System.Drawing.Size(50, 50);
             this.num7_btn.TabIndex = 4;
@@ -106,7 +105,7 @@
             // 
             // subtract_btn
             // 
-            this.subtract_btn.Location = new System.Drawing.Point(180, 230);
+            this.subtract_btn.Location = new System.Drawing.Point(180, 360);
             this.subtract_btn.Name = "subtract_btn";
             this.subtract_btn.Size = new System.Drawing.Size(50, 50);
             this.subtract_btn.TabIndex = 5;
@@ -116,7 +115,7 @@
             // 
             // num6_btn
             // 
-            this.num6_btn.Location = new System.Drawing.Point(124, 230);
+            this.num6_btn.Location = new System.Drawing.Point(124, 248);
             this.num6_btn.Name = "num6_btn";
             this.num6_btn.Size = new System.Drawing.Size(50, 50);
             this.num6_btn.TabIndex = 6;
@@ -126,7 +125,7 @@
             // 
             // num5_btn
             // 
-            this.num5_btn.Location = new System.Drawing.Point(68, 230);
+            this.num5_btn.Location = new System.Drawing.Point(68, 248);
             this.num5_btn.Name = "num5_btn";
             this.num5_btn.Size = new System.Drawing.Size(50, 50);
             this.num5_btn.TabIndex = 7;
@@ -136,7 +135,7 @@
             // 
             // num4_btn
             // 
-            this.num4_btn.Location = new System.Drawing.Point(12, 230);
+            this.num4_btn.Location = new System.Drawing.Point(12, 248);
             this.num4_btn.Name = "num4_btn";
             this.num4_btn.Size = new System.Drawing.Size(50, 50);
             this.num4_btn.TabIndex = 8;
@@ -146,9 +145,9 @@
             // 
             // equals_btn
             // 
-            this.equals_btn.Location = new System.Drawing.Point(180, 342);
+            this.equals_btn.Location = new System.Drawing.Point(236, 304);
             this.equals_btn.Name = "equals_btn";
-            this.equals_btn.Size = new System.Drawing.Size(50, 50);
+            this.equals_btn.Size = new System.Drawing.Size(50, 106);
             this.equals_btn.TabIndex = 9;
             this.equals_btn.Text = "=";
             this.equals_btn.UseVisualStyleBackColor = true;
@@ -156,7 +155,7 @@
             // 
             // decimal_btn
             // 
-            this.decimal_btn.Location = new System.Drawing.Point(124, 342);
+            this.decimal_btn.Location = new System.Drawing.Point(124, 360);
             this.decimal_btn.Name = "decimal_btn";
             this.decimal_btn.Size = new System.Drawing.Size(50, 50);
             this.decimal_btn.TabIndex = 10;
@@ -166,7 +165,7 @@
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(180, 286);
+            this.add_btn.Location = new System.Drawing.Point(180, 304);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(50, 50);
             this.add_btn.TabIndex = 11;
@@ -176,7 +175,7 @@
             // 
             // num3_btn
             // 
-            this.num3_btn.Location = new System.Drawing.Point(124, 286);
+            this.num3_btn.Location = new System.Drawing.Point(124, 304);
             this.num3_btn.Name = "num3_btn";
             this.num3_btn.Size = new System.Drawing.Size(50, 50);
             this.num3_btn.TabIndex = 12;
@@ -186,7 +185,7 @@
             // 
             // num2_btn
             // 
-            this.num2_btn.Location = new System.Drawing.Point(68, 286);
+            this.num2_btn.Location = new System.Drawing.Point(68, 304);
             this.num2_btn.Name = "num2_btn";
             this.num2_btn.Size = new System.Drawing.Size(50, 50);
             this.num2_btn.TabIndex = 13;
@@ -196,7 +195,7 @@
             // 
             // num1_btn
             // 
-            this.num1_btn.Location = new System.Drawing.Point(12, 286);
+            this.num1_btn.Location = new System.Drawing.Point(12, 304);
             this.num1_btn.Name = "num1_btn";
             this.num1_btn.Size = new System.Drawing.Size(50, 50);
             this.num1_btn.TabIndex = 14;
@@ -206,7 +205,7 @@
             // 
             // division_btn
             // 
-            this.division_btn.Location = new System.Drawing.Point(180, 118);
+            this.division_btn.Location = new System.Drawing.Point(180, 248);
             this.division_btn.Name = "division_btn";
             this.division_btn.Size = new System.Drawing.Size(50, 50);
             this.division_btn.TabIndex = 15;
@@ -216,7 +215,7 @@
             // 
             // modulo_btn
             // 
-            this.modulo_btn.Location = new System.Drawing.Point(180, 62);
+            this.modulo_btn.Location = new System.Drawing.Point(180, 136);
             this.modulo_btn.Name = "modulo_btn";
             this.modulo_btn.Size = new System.Drawing.Size(50, 50);
             this.modulo_btn.TabIndex = 16;
@@ -226,7 +225,7 @@
             // 
             // change_sign_btn
             // 
-            this.change_sign_btn.Location = new System.Drawing.Point(124, 62);
+            this.change_sign_btn.Location = new System.Drawing.Point(236, 248);
             this.change_sign_btn.Name = "change_sign_btn";
             this.change_sign_btn.Size = new System.Drawing.Size(50, 50);
             this.change_sign_btn.TabIndex = 17;
@@ -236,9 +235,9 @@
             // 
             // clear_btn
             // 
-            this.clear_btn.Location = new System.Drawing.Point(12, 62);
+            this.clear_btn.Location = new System.Drawing.Point(236, 136);
             this.clear_btn.Name = "clear_btn";
-            this.clear_btn.Size = new System.Drawing.Size(50, 50);
+            this.clear_btn.Size = new System.Drawing.Size(50, 106);
             this.clear_btn.TabIndex = 18;
             this.clear_btn.Text = "Clear";
             this.clear_btn.UseVisualStyleBackColor = true;
@@ -246,17 +245,17 @@
             // 
             // calc_output
             // 
-            this.calc_output.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.calc_output.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calc_output.Location = new System.Drawing.Point(12, 12);
+            this.calc_output.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calc_output.Location = new System.Drawing.Point(12, 92);
             this.calc_output.Name = "calc_output";
-            this.calc_output.Size = new System.Drawing.Size(218, 47);
+            this.calc_output.Size = new System.Drawing.Size(274, 30);
             this.calc_output.TabIndex = 19;
             this.calc_output.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.calc_output.Click += new System.EventHandler(this.calc_output_Click);
             // 
             // left_paren_btn
             // 
-            this.left_paren_btn.Location = new System.Drawing.Point(12, 118);
+            this.left_paren_btn.Location = new System.Drawing.Point(12, 136);
             this.left_paren_btn.Name = "left_paren_btn";
             this.left_paren_btn.Size = new System.Drawing.Size(50, 50);
             this.left_paren_btn.TabIndex = 20;
@@ -266,7 +265,7 @@
             // 
             // power_btn
             // 
-            this.power_btn.Location = new System.Drawing.Point(124, 118);
+            this.power_btn.Location = new System.Drawing.Point(124, 136);
             this.power_btn.Name = "power_btn";
             this.power_btn.Size = new System.Drawing.Size(50, 50);
             this.power_btn.TabIndex = 21;
@@ -276,7 +275,7 @@
             // 
             // right_paren_btn
             // 
-            this.right_paren_btn.Location = new System.Drawing.Point(68, 118);
+            this.right_paren_btn.Location = new System.Drawing.Point(68, 136);
             this.right_paren_btn.Name = "right_paren_btn";
             this.right_paren_btn.Size = new System.Drawing.Size(50, 50);
             this.right_paren_btn.TabIndex = 22;
@@ -284,22 +283,11 @@
             this.right_paren_btn.UseVisualStyleBackColor = true;
             this.right_paren_btn.Click += new System.EventHandler(this.right_paren_Click);
             // 
-            // delete_btn
-            // 
-            this.delete_btn.Location = new System.Drawing.Point(68, 62);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(50, 50);
-            this.delete_btn.TabIndex = 23;
-            this.delete_btn.Text = "Delete";
-            this.delete_btn.UseVisualStyleBackColor = true;
-            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
-            // 
             // calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(242, 403);
-            this.Controls.Add(this.delete_btn);
+            this.ClientSize = new System.Drawing.Size(298, 427);
             this.Controls.Add(this.right_paren_btn);
             this.Controls.Add(this.power_btn);
             this.Controls.Add(this.left_paren_btn);
@@ -354,7 +342,6 @@
         private System.Windows.Forms.Button left_paren_btn;
         private System.Windows.Forms.Button power_btn;
         private System.Windows.Forms.Button right_paren_btn;
-        private System.Windows.Forms.Button delete_btn;
     }
 }
 

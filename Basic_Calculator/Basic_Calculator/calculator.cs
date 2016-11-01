@@ -40,22 +40,87 @@ namespace Basic_Calculator
 
 
         // Input token parser
-        private void inputParsing(String userInput) {
+        private void input_Parsing(String userInput) {
+            var delimiters = new[] { '(', ')', '+', '\u2212', '/', '*', '^' };
             ArrayList tokenizedInput = new ArrayList();
             String tempToken = "";
+            double number;
             foreach (char c in userInput) {
-                if(c > 47 && c < 58) {
-                    currentDisplayedInput = "Working";
-                    update_calc_output_label();
+                if (delimiters.Contains(c)) {
+
+                    if (tempToken.Length > 0) {
+                        // This if statement makes sure the token is a number before adding it to the list
+                        if (Double.TryParse(tempToken, out number) != true) { incorrect_input(); return; }
+                        tokenizedInput.Add(tempToken);
+                        tempToken = "";
+                    }
+                    tokenizedInput.Add(c);
+                } else {
+                    tempToken += c;
                 }
             }
+            if (tempToken.Length > 0) {
+                // This if statement makes sure the token is a number before adding it to the list
+                if (Double.TryParse(tempToken, out number) != true) { incorrect_input(); return; }
+                tokenizedInput.Add(tempToken);
+            }
+            correct_input(tokenizedInput);
+            return;
         }
 
+        private double calculate_Value(ArrayList tokenizedInput)
+        {
+            // Set up two stacks, one for operators like +-/, one for operands like numbers
+            Stack<String> operators = new Stack<String> { };
+            Stack<String> operands = new Stack<String> { };
+            foreach(String s in tokenizedInput) {
+
+            }
+
+
+
+            return 2.0;
+        }
+
+        // Returns the precedence of the operator
+        private int check_Precedence(String op) {
+            switch (op)
+            {
+                case "(":
+                    return 4;
+                case ")":
+                    return 4;
+                case "^":
+                    return 3;
+                case "*":
+                    return 2;
+                case "/":
+                    return 2;
+                case "+":
+                    return 1;
+                case "-":
+                    return 1;
+                default:
+                    incorrect_input();
+                    break;
+            }
 
 
 
 
 
+            return 1;
+        }
+
+        private void incorrect_input()
+        {
+            calc_output.Text = "Invalid Input";
+        }
+
+        private void correct_input(ArrayList a)
+        {
+            calc_output.Text = a.ToString();
+        }
 
         // This function will display the currentDisplayedInput field to the calc_output label
         private void update_calc_output_label()
@@ -146,7 +211,8 @@ namespace Basic_Calculator
 
         // Click event handler for the equals/enter button
         private void equals_btn_Click(object sender, EventArgs e) {
-            inputParsing(currentDisplayedInput);
+            input_Parsing(currentDisplayedInput);
+            currentDisplayedInput = "";
         }
 
         // Click event handler for the additon button
@@ -162,7 +228,7 @@ namespace Basic_Calculator
         private void subtract_btn_Click(object sender, EventArgs e) {
             // Checks to prevent user error
             if (lastInput == inputTypes.Operator || lastInput == inputTypes.LeftParen || lastInput == inputTypes.empty) { return; }
-            currentDisplayedInput = currentDisplayedInput + "-";
+            currentDisplayedInput = currentDisplayedInput + "\u2212";
             update_calc_output_label();
             lastInput = inputTypes.Operator;
         }
@@ -185,18 +251,22 @@ namespace Basic_Calculator
             lastInput = inputTypes.Operator;
         }
 
-        // Click event handler for the modulo button
-        private void modulo_btn_Click(object sender, EventArgs e) {
+        // Click event handler for the back button
+        private void back_btn_Click(object sender, EventArgs e) {
             // Checks to prevent user error
-            if (lastInput == inputTypes.Operator || lastInput == inputTypes.LeftParen || lastInput == inputTypes.empty) { return; }
-            currentDisplayedInput = currentDisplayedInput + "%";
-            update_calc_output_label();
-            lastInput = inputTypes.Operator;
+            //if (lastInput == inputTypes.Operator || lastInput == inputTypes.LeftParen || lastInput == inputTypes.empty) { return; }
+            //currentDisplayedInput = currentDisplayedInput + "%";
+            //update_calc_output_label();
+            //lastInput = inputTypes.Operator;
         }
 
         // Click event handler for the change sign button
         private void change_sign_btn_Click(object sender, EventArgs e) {
-
+            // Checks to prevent user error
+            if (lastInput == inputTypes.Number || lastInput == inputTypes.RightParen) { return; }
+            currentDisplayedInput = currentDisplayedInput + "-";
+            update_calc_output_label();
+            lastInput = inputTypes.Operator;
         }
 
         // Click event handler for the clear button
@@ -217,6 +287,8 @@ namespace Basic_Calculator
 
         // Click event handler for the left parenthesis button
         private void left_paren_Click(object sender, EventArgs e) {
+            // Dont allow left parens 
+            if (lastInput == inputTypes.Number || lastInput == inputTypes.RightParen) { return; }
             currentDisplayedInput = currentDisplayedInput + "(";
             update_calc_output_label();
             lastInput = inputTypes.LeftParen;

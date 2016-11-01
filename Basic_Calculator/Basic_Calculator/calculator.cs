@@ -41,12 +41,12 @@ namespace Basic_Calculator
 
         // Input token parser
         private void input_Parsing(String userInput) {
-            var delimiters = new[] { '(', ')', '+', '\u2212', '/', '*', '^' };
+            var delimiters = new[] { "(", ")", "+", "\u2212", "/", "*", "^" };
             ArrayList tokenizedInput = new ArrayList();
             String tempToken = "";
             double number;
-            foreach (char c in userInput) {
-                if (delimiters.Contains(c)) {
+            foreach (Char c in userInput) {
+                if (delimiters.Contains(c.ToString())) {
 
                     if (tempToken.Length > 0) {
                         // This if statement makes sure the token is a number before adding it to the list
@@ -54,7 +54,7 @@ namespace Basic_Calculator
                         tokenizedInput.Add(tempToken);
                         tempToken = "";
                     }
-                    tokenizedInput.Add(c);
+                    tokenizedInput.Add(c.ToString());
                 } else {
                     tempToken += c;
                 }
@@ -64,22 +64,79 @@ namespace Basic_Calculator
                 if (Double.TryParse(tempToken, out number) != true) { incorrect_input(); return; }
                 tokenizedInput.Add(tempToken);
             }
-            correct_input(tokenizedInput);
+            calc_output.Text = calculate_Value(tokenizedInput);
             return;
         }
 
-        private double calculate_Value(ArrayList tokenizedInput)
+        private String calculate_Value(ArrayList tokenizedInput)
         {
+            Boolean fail = false;
+            var operator_symbols = new[] { "+", "\u2212", "/", "*", "^" };
             // Set up two stacks, one for operators like +-/, one for operands like numbers
             Stack<String> operators = new Stack<String> { };
             Stack<String> operands = new Stack<String> { };
             foreach(String s in tokenizedInput) {
-
+                // If the token is an operator do the following checks
+                if (operator_symbols.Contains(s))
+                {
+                    // If the operator is the first one or has a larger precedence than the current operator, add it to the operator stack
+                    if (operators.Count == 0 || check_Precedence(operators.Peek()) < check_Precedence(s))
+                    {
+                        operators.Push(s);
+                    }
+                    // If the operator has an equal precedence or a smaller precedence then calculate the last value and add it to the operands stack
+                    else if (check_Precedence(operators.Peek()) == check_Precedence(s) || check_Precedence(operators.Peek()) > check_Precedence(s))
+                    {
+                        try {
+                            operands.Push(simple_Calculate(operands.Pop(), operands.Pop(), operators.Pop()));
+                        } catch (Exception InvalidOperationException) {
+                            fail = true;
+                            break;
+                        }
+                        operators.Push(s);
+                    }
+                }
+                // If the token is a left paren, add it to the stack, used as a sentinel 
+                else if (s == "(")
+                {
+                    operators.Push(s);
+                }
+                // If the token is a right paren, start evaluating the stacks until you hit a left paren.
+                else if (s == ")")
+                {
+                    while (operators.Peek() != "(")
+                    {
+                        try {
+                            operands.Push(simple_Calculate(operands.Pop(), operands.Pop(), operators.Pop()));
+                        } catch (Exception InvalidOperationException) {
+                            fail = true;
+                            break;
+                        }
+                    }
+                    // Remove left paren
+                    operators.Pop();
+                }
+                // If the token is not an operator or paren, then it is an operand and gets put on the operand stack
+                else {
+                    operands.Push(s);
+                }
+            }
+            // Once the tokens have all been parsed, finish calculating the stacks and return the final value in the operand stack
+            while (operators.Count != 0)
+            {
+                try {
+                    operands.Push(simple_Calculate(operands.Pop(), operands.Pop(), operators.Pop()));
+                } catch(Exception InvalidOperationException) {
+                    fail = true;
+                    break;
+                }
             }
 
-
-
-            return 2.0;
+            if (fail)
+            {
+                return "Invalid Input";
+            }
+            return operands.Pop();
         }
 
         // Returns the precedence of the operator
@@ -87,9 +144,9 @@ namespace Basic_Calculator
             switch (op)
             {
                 case "(":
-                    return 4;
+                    return 0;
                 case ")":
-                    return 4;
+                    return 0;
                 case "^":
                     return 3;
                 case "*":
@@ -98,27 +155,38 @@ namespace Basic_Calculator
                     return 2;
                 case "+":
                     return 1;
-                case "-":
+                case "\u2212":
                     return 1;
-                default:
-                    incorrect_input();
-                    break;
             }
-
-
-
-
-
-            return 1;
+            // If the operator was not found return -1
+            return -1;
         }
 
-        private void incorrect_input()
-        {
+        // Returns the calculation of two numbers and an operator
+        private String simple_Calculate(string val2, string val1, string op) {
+            double number1 = Double.Parse(val1);
+            double number2 = Double.Parse(val2);
+            switch (op)
+            {
+                case "^":
+                    return Math.Pow(number1,number2).ToString();
+                case "*":
+                    return (number1*number2).ToString();
+                case "/":
+                    return (number1/number2).ToString();
+                case "+":
+                    return (number1+number2).ToString();
+                case "\u2212":
+                    return (number1-number2).ToString();
+            }
+            return "dff";
+        }
+
+        private void incorrect_input() {
             calc_output.Text = "Invalid Input";
         }
 
-        private void correct_input(ArrayList a)
-        {
+        private void correct_input(ArrayList a) {
             calc_output.Text = a.ToString();
         }
 

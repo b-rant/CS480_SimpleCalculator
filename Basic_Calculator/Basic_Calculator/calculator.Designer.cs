@@ -115,7 +115,6 @@
             this.subtract_btn.Name = "subtract_btn";
             this.subtract_btn.Size = new System.Drawing.Size(50, 50);
             this.subtract_btn.TabIndex = 5;
-            this.subtract_btn.Text = "-";
             this.subtract_btn.UseVisualStyleBackColor = true;
             this.subtract_btn.Click += new System.EventHandler(this.subtract_btn_Click);
             // 
@@ -236,7 +235,7 @@
             this.change_sign_btn.Name = "change_sign_btn";
             this.change_sign_btn.Size = new System.Drawing.Size(50, 50);
             this.change_sign_btn.TabIndex = 17;
-            this.change_sign_btn.Text = "+/-";
+            this.change_sign_btn.Text = "-";
             this.change_sign_btn.UseVisualStyleBackColor = true;
             this.change_sign_btn.Click += new System.EventHandler(this.change_sign_btn_Click);
             // 

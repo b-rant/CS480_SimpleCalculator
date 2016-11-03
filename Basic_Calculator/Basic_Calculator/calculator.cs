@@ -16,10 +16,11 @@ namespace Basic_Calculator
         public calculator()
         {
             InitializeComponent();
+            subtract_btn.Text = "\u2212";
         }
 
         // Calculator fields //
-
+        
         // The value currently shown on the calc_output label
         private string currentDisplayedInput = "";
 
@@ -271,8 +272,6 @@ namespace Basic_Calculator
 
         // Click event handler for the decimal button
         private void decimal_btn_Click(object sender, EventArgs e) {
-            // Checks to prevent user error
-            if (lastInput == inputTypes.Operator || lastInput == inputTypes.LeftParen || lastInput == inputTypes.empty) { return; }
             currentDisplayedInput = currentDisplayedInput + ".";
             update_calc_output_label();
             lastInput = inputTypes.Operator;
@@ -372,7 +371,7 @@ namespace Basic_Calculator
         // Click event handler for the power button
         private void power_bt_Click(object sender, EventArgs e) {
             // Checks to prevent user error
-            if (lastInput == inputTypes.Operator || lastInput == inputTypes.LeftParen) { return; }
+            if (lastInput == inputTypes.Operator || lastInput == inputTypes.LeftParen || lastInput == inputTypes.empty) { return; }
             currentDisplayedInput = currentDisplayedInput + "^";
             update_calc_output_label();
             lastInput = inputTypes.Operator;
